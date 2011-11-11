@@ -1,0 +1,61 @@
+Testsuite: mockcriteria.DomainTests
+Tests run: 6, Failures: 0, Errors: 0, Time elapsed: 0,151 sec
+------------- Standard Output ---------------
+--Output from testEmptyFilterReturnsFullList--
+ELemento: mockcriteria.Domain : 1
+ELemento: mockcriteria.Domain : 2
+ELemento: mockcriteria.Domain : 3
+ELemento: mockcriteria.Domain : 4
+--Output from testEqFilterOnBoolean--
+ELemento: mockcriteria.Domain : 1
+ELemento: mockcriteria.Domain : 2
+ELemento: mockcriteria.Domain : 3
+ELemento: mockcriteria.Domain : 4
+--Output from testEqFilterOnNumber--
+ELemento: mockcriteria.Domain : 1
+ELemento: mockcriteria.Domain : 2
+ELemento: mockcriteria.Domain : 3
+ELemento: mockcriteria.Domain : 4
+--Output from testEqFilterOnString--
+ELemento: mockcriteria.Domain : 1
+ELemento: mockcriteria.Domain : 2
+ELemento: mockcriteria.Domain : 3
+ELemento: mockcriteria.Domain : 4
+--Output from testMultipleEqOnSring--
+ELemento: mockcriteria.Domain : 1
+ELemento: mockcriteria.Domain : 2
+ELemento: mockcriteria.Domain : 3
+ELemento: mockcriteria.Domain : 4
+--Output from testGtGeLtLeOnNumber--
+ELemento: mockcriteria.Domain : 1
+ELemento: mockcriteria.Domain : 2
+ELemento: mockcriteria.Domain : 3
+ELemento: mockcriteria.Domain : 4
+ELemento: mockcriteria.Domain : 1
+ELemento: mockcriteria.Domain : 2
+ELemento: mockcriteria.Domain : 3
+ELemento: mockcriteria.Domain : 4
+ELemento: mockcriteria.Domain : 1
+ELemento: mockcriteria.Domain : 2
+ELemento: mockcriteria.Domain : 3
+ELemento: mockcriteria.Domain : 4
+ELemento: mockcriteria.Domain : 1
+ELemento: mockcriteria.Domain : 2
+ELemento: mockcriteria.Domain : 3
+ELemento: mockcriteria.Domain : 4
+------------- ---------------- ---------------
+------------- Standard Error -----------------
+--Output from testEmptyFilterReturnsFullList--
+--Output from testEqFilterOnBoolean--
+--Output from testEqFilterOnNumber--
+--Output from testEqFilterOnString--
+--Output from testMultipleEqOnSring--
+--Output from testGtGeLtLeOnNumber--
+------------- ---------------- ---------------
+
+Testcase: testEmptyFilterReturnsFullList took 0,071 sec
+Testcase: testEqFilterOnBoolean took 0,008 sec
+Testcase: testEqFilterOnNumber took 0,01 sec
+Testcase: testEqFilterOnString took 0,012 sec
+Testcase: testMultipleEqOnSring took 0,009 sec
+Testcase: testGtGeLtLeOnNumber took 0,036 sec
