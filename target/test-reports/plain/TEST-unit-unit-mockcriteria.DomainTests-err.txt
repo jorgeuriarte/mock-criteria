@@ -1,6 +1,0 @@
---Output from testEmptyFilterReturnsFullList--
---Output from testEqFilterOnBoolean--
---Output from testEqFilterOnNumber--
---Output from testEqFilterOnString--
---Output from testMultipleEqOnSring--
---Output from testGtGeLtLeOnNumber--
