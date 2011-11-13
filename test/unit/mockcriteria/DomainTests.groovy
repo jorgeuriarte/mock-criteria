@@ -10,7 +10,8 @@ class DomainTests extends GrailsUnitTestCase {
         domains = [new Domain(id:1, oldid: 1, name:"jorge", address:"Bilbao", active:true),
         		   new Domain(id:2, oldid: 2, name:"pepe", address:"Bilbao", active:true),
         		   new Domain(id:3, oldid: 4, name:"joseba", address:"Miribilla", active: false),
-        		   new Domain(id:4, oldid: 3, name:"eloy", address:"Bilbao", active:false)
+        		   new Domain(id:4, oldid: 3, name:"eloy", address:"Bilbao", active:false),
+        		   new Domain(id:5, oldid: 4, name:"Getxo", address:"Getxo", active:false)
         ]
         CriteriaMocker.mockCriteria(Domain, domains)
     }
@@ -83,6 +84,15 @@ class DomainTests extends GrailsUnitTestCase {
     	}.size()
     	assert 3 == results {
     		like('address', 'B%ao')
+    	}.size()
+    }
+
+    void testEqOnProperties() {
+    	assert 2 == results {
+    		eqProperty('id', 'oldid')
+    	}.size()
+    	assert 1 == results {
+    		eqProperty('name', 'address')
     	}.size()
     }
 
