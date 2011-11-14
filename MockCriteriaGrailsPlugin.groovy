@@ -30,7 +30,7 @@ Brief description of the plugin.
     }
 
     def doWithDynamicMethods = { ctx ->
-        grails.test.GrailsUnitTestCase.mixin mockcriteria.MockCriteria 
+        grails.test.GrailsUnitTestCase.mixin mockcriteria.MockCriteriaMixin 
     }
 
     def doWithApplicationContext = { applicationContext ->

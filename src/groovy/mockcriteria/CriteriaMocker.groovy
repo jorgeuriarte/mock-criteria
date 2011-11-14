@@ -3,6 +3,8 @@ package mockcriteria;
 class CriteriaMocker {
 	def element
 	boolean fits = true
+
+	def CriteriaMocker() {}
 	def CriteriaMocker(element) {
 		this.element = element
 	}
@@ -35,7 +37,7 @@ class CriteriaMocker {
 	}
 
 	def ltProperty(a, b) {
-		test { element."${a}" <= element."${b}" }
+		test { element."${a}" < element."${b}" }
 	}
 
 	def le(a, b) {
@@ -47,8 +49,27 @@ class CriteriaMocker {
 	}
 
 	def like(a, b) {
-		def pattern = /^${b.replaceAll('%','.+')}$/
-		test { element."${a}" ==~ pattern }
+		test { element."${a}" ==~ likePattern(b) }
+	}
+
+	def likeProperty(a, b) {
+		test { element."${a}" ==~ likePattern(element."${b}") }
+	}
+
+	def ilike(a, b) {
+		test { element."${a}" ==~ ilikePattern(b) }
+	}
+
+	def ilikeProperty(a, b) {
+		test { element."${a}" ==~ ilikePattern(element."${b}") }
+	}
+
+
+	private def likePattern(value) {
+		/^${value.replaceAll('%','.+')}$/
+	}
+	private def ilikePattern(value) {
+		/^(?i)${value.replaceAll('%','.+')}$/
 	}
 
 	Closure test = { comp ->

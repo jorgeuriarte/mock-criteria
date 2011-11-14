@@ -2,6 +2,7 @@ package mockcriteria
 
 import grails.test.*
 
+@Mixin(mockcriteria.MockCriteriaMixin)
 class DomainTests extends GrailsUnitTestCase {
 
 	def domains
@@ -13,7 +14,7 @@ class DomainTests extends GrailsUnitTestCase {
         		   new Domain(id:4, oldid: 3, name:"eloy", address:"Bilbao", active:false),
         		   new Domain(id:5, oldid: 4, name:"Getxo", address:"Getxo", active:false)
         ]
-        CriteriaMocker.mockCriteria(Domain, domains)
+        mockCriteria(Domain, domains)
     }
 
     protected void tearDown() {
@@ -85,6 +86,15 @@ class DomainTests extends GrailsUnitTestCase {
     	assert 3 == results {
     		like('address', 'B%ao')
     	}.size()
+    }
+
+    void testILikeOnString() {
+        assert 3 == results {
+            ilike('address', 'b%ao')
+        }.size()
+        assert domains.size() == results {
+            ilikeProperty('address', 'address')
+        }.size()
     }
 
     void testEqOnProperties() {
